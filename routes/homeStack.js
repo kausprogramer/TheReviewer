@@ -5,11 +5,12 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 import {createAppContainer} from 'react-navigation';
 import Home from '../screens/home';
 import ReviwDetails from '../screens/reviwDetails';
+import Header from '../shared/header';
 const screens= {
     Home:{
         screen:Home,
         navigationOptions:{
-            title: 'The Reviewer',
+            headerTitle: ()=><Header/>,
         }
     },
     ReviwDetails:{
