@@ -1,16 +1,20 @@
 import React from "react";
 import {StyleSheet,Text,View}  from 'react-native';
 import {MaterialIcons} from '@expo/vector-icons';
-import { NavigationContext } from "react-navigation";
+import { useNavigation } from '@react-navigation/native';
 
-export default function Header() {
-    const openMenu=() => {
-        navigation.openDrawer()
-    }
+
+
+
+export default function Header({navigation}) {
+    // const openMenu=() => {
+    //     navigation.dispatch(DrawerActions.openDrawer())
+    //     }
+    
     return(
         <View styles={Styles.header}>
+        <MaterialIcons name ='menu' size={28} onPress={navigation.toggleDrawer()} style={Styles.icon}/>
             <View>
-                <MaterialIcons name ='menu' size={28} onPress={openMenu} style={Styles.icon}/>
                 <Text style={Styles.headerText}>The Reviewer</Text>
             </View>
         </View>
@@ -19,6 +23,7 @@ export default function Header() {
 const Styles= StyleSheet.create({
     header:
     {
+        flex:1,
         width:'100%',
         height:'100%',
         flexDirection:'row',

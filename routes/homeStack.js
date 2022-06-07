@@ -9,10 +9,12 @@ import Header from '../shared/header';
 const screens= {
     Home:{
         screen:Home,
-        navigationOptions:{
-            headerTitle: ()=><Header/>,
-        }
-    },
+        navigationOptions:({navigation})=>{
+                return{
+                    headerTitle: ()=><Header/>,
+                }
+            }
+        },
     ReviwDetails:{
         screen:ReviwDetails,
         navigationOptions:{
