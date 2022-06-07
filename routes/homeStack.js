@@ -1,7 +1,10 @@
-import { createStackNavigator} from 'react-navigation-stack';
+
+import { createStackNavigator } from 'react-navigation-stack';
+import { NavigationContainer } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 import {createAppContainer} from 'react-navigation';
-import Home from '../../reviw_app/screens/home';
-import ReviwDetails from '../../reviw_app/screens/reviwDetails';
+import Home from '../screens/home';
+import ReviwDetails from '../screens/reviwDetails';
 const screens= {
     Home:{
         screen:Home,
