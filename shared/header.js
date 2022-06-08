@@ -1,5 +1,5 @@
 import React from "react";
-import {StyleSheet,Text,View}  from 'react-native';
+import {StyleSheet,Text,View,TouchableOpacity}  from 'react-native';
 import {MaterialIcons} from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -13,10 +13,12 @@ export default function Header({navigation}) {
     
     return(
         <View styles={Styles.header}>
+            <TouchableOpacity
+        style={{paddingRight: 8}}
+        onPress={() => navigation.toggleDrawer()}>
         <MaterialIcons name ='menu' size={28} onPress={navigation.toggleDrawer()} style={Styles.icon}/>
-            <View>
-                <Text style={Styles.headerText}>The Reviewer</Text>
-            </View>
+        
+      </TouchableOpacity>
         </View>
     )
 }
